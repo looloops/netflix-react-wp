@@ -59,3 +59,12 @@ footer {
 .col img:hover {
   transform: scale(1.1);
 }
+
+.rowStyle {
+  height: 400px;
+}
+
+.rowStyle img {
+  object-fit: cover;
+  height: 100%;
+}

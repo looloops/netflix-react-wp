@@ -6,12 +6,12 @@ import Main from "./components/Main";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-dark text-ligh">
       <header>
         <MyNav />
       </header>
       <section></section>
-      <main>
+      <main className="t">
         <Main />
       </main>
       <footer>

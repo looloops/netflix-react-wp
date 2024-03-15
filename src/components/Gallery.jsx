@@ -38,7 +38,7 @@ class Gallery extends Component {
   render() {
     return (
       <>
-        <h2 className="mb-4 fs-3 fw-bold text-white ms-5">{this.props.idSearch.toUpperCase()}</h2>
+        <h2 className="fs-3 fw-bold text-white">{this.props.idSearch.toUpperCase()}</h2>
         {this.state.isLoading && (
           <div className="text-center">
             <Spinner animation="grow" style={{ color: "#cb121a" }} />
@@ -49,8 +49,8 @@ class Gallery extends Component {
             <Alert variant="danger">Errore improvviso!! Sorry!</Alert>
           </div>
         )}
-        <Row className="row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xl-6 mb-4">
-          {this.state.movies.slice(0, 5).map((movie) => (
+        <Row className="rowStyle row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xl-6 mb-4">
+          {this.state.movies.slice(0, 6).map((movie) => (
             <MovieCard src={movie.Poster} alt={movie.Title} key={movie.imdbID} />
           ))}
         </Row>
