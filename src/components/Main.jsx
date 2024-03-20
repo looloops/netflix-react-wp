@@ -1,6 +1,7 @@
 import { Component } from "react";
-import { Container, Dropdown, Row } from "react-bootstrap";
+import { Container, Dropdown } from "react-bootstrap";
 import Gallery from "./Gallery";
+
 class Main extends Component {
   state = {
     movies: [],
@@ -62,8 +63,8 @@ class Main extends Component {
             </Dropdown>
           </div>
           <div>
-            <i class="bi bi-grid icons"></i>
-            <i class="bi bi-grid-3x3 icons"></i>
+            <i className="bi bi-grid icons"></i>
+            <i className="bi bi-grid-3x3 icons"></i>
           </div>
         </div>
         <Gallery idSearch={"harry potter"} />

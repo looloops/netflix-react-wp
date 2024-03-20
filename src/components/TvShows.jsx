@@ -1,12 +1,14 @@
 import { Component } from "react";
 import { Alert, Row, Spinner } from "react-bootstrap";
 import MovieCard from "./MovieCard";
+import { Link } from "react-router-dom";
 
-class Gallery extends Component {
+class TvShows extends Component {
   state = {
     movies: [],
     isLoading: true,
     isError: false,
+    idSelected: "",
   };
 
   getMovie = async () => {
@@ -50,8 +52,16 @@ class Gallery extends Component {
           </div>
         )}
         <Row className="rowStyle row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xl-6 mb-4">
-          {this.state.movies.slice(0, 6).map((movie) => (
-            <MovieCard src={movie.Poster} alt={movie.Title} key={movie.imdbID} />
+          {this.state.movies.map((movie) => (
+            <Link key={movie.imdbID} to={`/details/${movie.imdbID}`}>
+              <MovieCard
+                src={movie.Poster}
+                alt={movie.Title}
+                // onClick={() => {
+                //   this.setState({ idSelected: movie.imdb });
+                // }}
+              />
+            </Link>
           ))}
         </Row>
       </>
@@ -59,4 +69,4 @@ class Gallery extends Component {
   }
 }
 
-export default Gallery;
+export default TvShows;
